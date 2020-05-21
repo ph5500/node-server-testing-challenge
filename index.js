@@ -1,10 +1,8 @@
-const server = require('./server/server.js');
-require('dotenv').config();
-const colors = require('colors');
-const port = process.env.PORT;
-const environment = process.env.NODE_ENV;
+require("dotenv").config();
 
+const server = require("./api/server.js");
 
-server.listen(port, () => {
-    console.log(`\n === Server running in ${environment} mode on http://localhost:${port} === \n`.magenta.bold.underline)
-})
+const port = process.env.PORT || 5000;
+server.listen(port, () =>
+    console.log(`\n** Server listening on port ${port} **\n`)
+);
